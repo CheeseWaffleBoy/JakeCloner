@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+button:disabled {
+  opacity: 1;
+  color: black;
+  background-color: #a2aba6;
+  cursor: not-allowed;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+button {
+  opacity: 1;
+  color: black;
+  background-color: #a2aba6;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #a2aba6;
+  transform: scale(1.05);
+}
