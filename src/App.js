@@ -10,7 +10,7 @@ export default function App() {
   const [rebirthBoost, setRebirthBoost] = useState(1);
   const [autosBought, setAutosBought] = useState(0)
 
-  const names = ["Jake", "Aiden", "Remy", "Nathan", "Zane"];
+  const names = ["Jake", "Aiden", "Remy", "Nathan", "Zane", "Clinton","Connor"];
   const [currentName, setCurrentName] = useState("Jake");
 
   const [tooltip, setTooltip] = useState({
@@ -29,7 +29,7 @@ export default function App() {
   }, [perSecond, rebirthBoost]);
 
   function handleClick() {
-    setCount(c => c + (1 + extraClick) * rebirthBoost);
+    setCount(c => c + (1 + extraClick) * (autosBought / 10) * rebirthBoost);
   }
 
   function Button({ handleClick }) {
@@ -194,7 +194,7 @@ export default function App() {
           const randomIndex = Math.floor(Math.random() * names.length);
           setCurrentName(names[randomIndex]);
 
-          setRebirthBoost(r => r + count / 10000);
+          setRebirthBoost(r => r + count / 5000);
           setCount(0);
           setExtraClick(0);
           setPerSecond(0);
@@ -221,6 +221,7 @@ export default function App() {
           setBought(false);
           setBought1(false);
           setRebirthBoost(1);
+          setAutosBought(0)
         }}
       >
         Reset
